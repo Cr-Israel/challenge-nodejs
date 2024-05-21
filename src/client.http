@@ -1,0 +1,37 @@
+@url = http://localhost:3333
+@route = tasks
+
+### GET
+GET {{url}}/{{route}} HTTP/1.1
+
+### GET with Query Parameters
+GET {{url}}/{{route}}?search=node HTTP/1.1
+
+### POST
+POST {{url}}/{{route}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Estudar Node",
+  "description": "Aprender Node"
+}
+
+### PUT
+PUT {{url}}/{{route}}/457ffab2-063a-41d4-85db-480be448271c HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Estudar Rust",
+  "description": "Aprimorar meus conhecimentos sobre Rust."
+}
+
+### PATCH
+PATCH {{url}}/{{route}}/457ffab2-063a-41d4-85db-480be448271c/complete HTTP/1.1
+Content-Type: application/json
+
+{
+  "completed_at": "true"
+}
+
+### DELETE
+DELETE {{url}}/{{route}}/a9411580-b519-4f35-b265-c48562d88bc5 HTTP/1.1
